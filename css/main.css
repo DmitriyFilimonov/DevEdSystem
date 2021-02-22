@@ -31,3 +31,7 @@
   #checkboxes label:hover {
     background-color: #1e90ff;
   }
+
+  .table-row{
+    border: 1px #dadada solid;
+  }
