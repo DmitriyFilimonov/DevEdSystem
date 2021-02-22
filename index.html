@@ -73,6 +73,14 @@
                     </div>
                 </div>
             </div>
+            <div class="col">
+                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="поиск по тегам">
+                <datalist id="datalistOptions">
+                    <script>
+                        cycle();
+                    </script>
+                </datalist>
+            </div>
         </div>
     </div>
 
@@ -81,6 +89,8 @@
 
         Array.from(document.querySelectorAll('.toast'))
             .forEach(toastNode => new Toast(toastNode))
+
+        
     </script>
 </body>
 
