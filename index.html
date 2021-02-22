@@ -6,16 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-    <link href="./css/main.css" rel="stylesheet">
-    <title>Document</title>
-
-</head>
-
-<body>
+        <link href="./css/main.css" rel="stylesheet">
+        <title>Document</title>
+        
+    </head>
+    
+    <body>
+    <script scr="./answer-checking.js"></script>
+    
     <div class="container">
         <div class="row align-items-start">
             <div class="col">
@@ -29,55 +31,55 @@
                     <div id="courses">
                         <label for="one">
                             <input type="checkbox" id="one" />First checkbox</label>
-                            <label for="two">
-                                <input type="checkbox" id="two" />Second checkbox</label>
-                                <label for="three">
-                                    <input type="checkbox" id="three" />Third checkbox</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="multiselect">
-                                <div class="selectBox" onclick="showGroups()">
-                                    <select>
-                                        <option>Select an option</option>
-                                    </select>
-                                    <div class="overSelect"></div>
-                                </div>
-                                <div id="groups">
-                                    <label for="one">
-                                        <input type="checkbox" id="one" />First checkbox</label>
-                                        <label for="two">
-                                            <input type="checkbox" id="two" />Second checkbox</label>
-                                            <label for="three">
-                                                <input type="checkbox" id="three" />Third checkbox</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="multiselect">
-                                            <div class="selectBox" onclick="showThemes()">
-                                                <select>
-                                                    <option>Select an option</option>
-                                                </select>
-                                                <div class="overSelect"></div>
-                                            </div>
-                                            <div id="themes">
-                                                <label for="one">
-                                                    <input type="checkbox" id="one" />First checkbox</label>
-                                                    <label for="two">
-                                                        <input type="checkbox" id="two" />Second checkbox</label>
-                                                        <label for="three">
-                                                            <input type="checkbox" id="three" />Third checkbox</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="поиск по тегам">
-                                                    <datalist id="datalistOptions">
-                                                        <script>
-                                                            cycle();
-                                                            </script>
+                        <label for="two">
+                            <input type="checkbox" id="two" />Second checkbox</label>
+                        <label for="three">
+                            <input type="checkbox" id="three" />Third checkbox</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="multiselect">
+                    <div class="selectBox" onclick="showGroups()">
+                        <select>
+                            <option>Select an option</option>
+                        </select>
+                        <div class="overSelect"></div>
+                    </div>
+                    <div id="groups">
+                        <label for="one">
+                            <input type="checkbox" id="one" />First checkbox</label>
+                        <label for="two">
+                            <input type="checkbox" id="two" />Second checkbox</label>
+                        <label for="three">
+                            <input type="checkbox" id="three" />Third checkbox</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="multiselect">
+                    <div class="selectBox" onclick="showThemes()">
+                        <select>
+                            <option>Select an option</option>
+                        </select>
+                        <div class="overSelect"></div>
+                    </div>
+                    <div id="themes">
+                        <label for="one">
+                            <input type="checkbox" id="one" />First checkbox</label>
+                        <label for="two">
+                            <input type="checkbox" id="two" />Second checkbox</label>
+                        <label for="three">
+                            <input type="checkbox" id="three" />Third checkbox</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="поиск по тегам">
+                <datalist id="datalistOptions">
+                    <script>
+                        cycle();
+                    </script>
                 </datalist>
             </div>
         </div>
@@ -93,9 +95,10 @@
             </div>
             <div class="col">
                 <input type="button" value="назначить">
+
             </div>
             <div class="col">
-                <input type="button" value="просмотреть ответы">
+                <input type="button" value="просмотреть ответы" id="check-answer" onclick="showChecking()">
             </div>
             <div class="col">
                 теги
@@ -121,18 +124,51 @@
                 теги
             </div>
         </div>
+        <div class="row align-items-start table-row">
+            <div class="col">
+                Front-end
+            </div>
+            <div class="col">
+                утрення
+            </div>
+            <div class="col">
+                тема
+            </div>
+            <div class="col">
+                <input type="button" value="назначить">
+            </div>
+            <div class="col">
+                <input type="button" value="проверить ответы">
+            </div>
+            <div class="col">
+                список тегов
+            </div>
+        </div>
     </div>
-    
-    <script src="./listCheckbox.js"></script>
-    
+
+    <div id="answer-checking-container">
+        <div class="closer" onclick="closeChecking()"></div>
+        <div id="answer-checking-window">
+            <div class="student-and-groups-list-container">
+                списко студнтов 
+            </div>
+            <div class="main">
+                ответ
+            </div>
+        </div>
+        <div class="closer" onclick="closeChecking()"></div>
+    </div>
+
+    <script src="./listCheckbox.js">customCells();</script>
+
     <script type="module">
         import { Toast } from 'bootstrap.esm.min.js'
-        
+
         Array.from(document.querySelectorAll('.toast'))
-        .forEach(toastNode => new Toast(toastNode))
-        
-        
-        </script>
+            .forEach(toastNode => new Toast(toastNode))
+
+
+    </script>
 </body>
 
 </html>

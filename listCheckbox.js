@@ -24,6 +24,7 @@ function showThemes() {
 
 //tags
 
+
 let tags = ["variables", "arrays", "css", "cycles", "C#", "data structures", "linked list"];
 
 function cycle(){
@@ -33,12 +34,26 @@ function cycle(){
 }
 
 //table cells customization
+function customCells(){
+  let table = document.getElementsByClassName("table-row");
 
-let table = document.getElementsByClassName("table-row");
+  console.log(table);
 
-for (i=0; i<table.length; i++){
-  let tableCell = table[i].getElementsByClassName("col");
-  for (j=0; j<tableCell.length; j++){
-    tableCell[j].style.border = "1px solid #0000FF";
+  for (i=0; i<table.length; i++){
+    let tableCells = table[i].getElementsByClassName("col");
+    for (j=0; j<tableCells.length; j++){
+      tableCells[j].style.border = "1px solid #FF0000";
+    }
   }
+}
+function showChecking(){
+  console.log("open")
+  checkingWindow = document.getElementById("answer-checking-container");
+  checkingWindow.style.display = "flex";
+}
+
+function closeChecking(){
+  console.log("event call")
+  checkingWindow = document.getElementById("answer-checking-container");
+  checkingWindow.style.display = "none";
 }
