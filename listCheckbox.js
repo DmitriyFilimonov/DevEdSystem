@@ -60,11 +60,64 @@ function closeChecking(){
 
 //jQuery
 
-$( document ).ready(function() {
-  $('.col input').click(function(){
-    if($(this).val()=="назначить")
-    $(this).val("назначено")
-    else
-    $(this).val("назначить")
+$(document).ready(function() {
+  $(".appoint").click(function(){
+    if($(this).val()=="назначить"){
+      $(this).val("назначено");
+    }
+    else{
+      $(this).val("назначить");
+    }
   })
 });
+
+$(document).ready(function() {
+  $(".student").click(function(){
+      target=$(this).text();
+      $.each(answers, function(i, value){
+        if (target==answers[i].studentName)
+          $(".test-screenshot img").attr("src", answers[i].screenshot);
+      });
+  })
+})
+
+//ПОЧЕМУ ТАК НЕ РАБОТАЕТ??
+
+// $(document).ready(function() {
+//   $(".student").click(function(){
+//     $.each($(".student"), function(i, value){
+//       console.log(i,' ', value.text());
+//     });
+//   })
+// })
+
+//А ТАК РАБОТАЕТ??
+
+// $(document).ready(function() {
+//   $(".student").click(function(){
+//     $.each($(".student"), function(){
+//       console.log($(this).text());
+//     });
+//   })
+// })
+
+//classes
+class Answer{
+  
+  constructor(studentName, screenshot, gitLink, chat){
+    this.studentName=studentName;
+    this.screenshot=screenshot;
+    this.gitLink=gitLink;
+    this.chat=chat;
+  }
+}
+
+ let answers = [new Answer(), new Answer()];
+
+answers[0].studentName="Семён Швец";
+answers[1].studentName="Иван Иванов";
+
+answers[0].screenshot="https://www.codeproject.com/KB/architecture/autp5/vts.jpg";
+answers[1].screenshot="https://docs.microsoft.com/en-us/visualstudio/test/media/test-explorer-banktests-passed.png?view=vs-2019";
+
+console.log(answers[0].studentName);

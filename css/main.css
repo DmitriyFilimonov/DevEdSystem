@@ -80,8 +80,20 @@ body{
     width:220px;
     height:100%;
     border: 4px #FFdada solid;
+    display: flex;
+    flex-direction: column;
   }
   .main{
     flex-grow:1;
+    width:880px;
     border: 4px #FFdada solid;
+  }
+  .student:hover{
+    background-color: #dadaff;
+  }
+
+  .task{
+    max-height: 350px;
+    overflow-y: scroll;
+    resize: vertical;
   }
