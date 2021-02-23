@@ -1,8 +1,9 @@
 
 function changeCheckboxDisplay(checkboxes){
-  if (checkboxes.style.display=="none") {
-      checkboxes.style.display = "block";
+  if ((checkboxes.style.display=="none")||(checkboxes.style.display=="")){//почему none эквивалентно ""??? И почему с одной "" onclick() срабатывает только один раз??
+    checkboxes.style.display = "block";
   } else {
+    console.log("it works");
     checkboxes.style.display = "none";
   }
 }
@@ -22,16 +23,6 @@ function showThemes() {
   changeCheckboxDisplay(checkboxes);
 }
 
-//tags
-
-
-let tags = ["variables", "arrays", "css", "cycles", "C#", "data structures", "linked list"];
-
-function cycle(){
-  for (i=0; i<tags.length; i++){
-      document.write(`<option value="`,tags[i],`"/>`);
-  }
-}
 
 //table cells customization
 function customCells(){
@@ -60,6 +51,7 @@ function closeChecking(){
 
 //jQuery
 
+
 $(document).ready(function() {
   $(".appoint").click(function(){
     if($(this).val()=="назначить"){
@@ -71,17 +63,18 @@ $(document).ready(function() {
   })
 });
 
+
 $(document).ready(function() {
   $(".student").click(function(){
       target=$(this).text();
-      $.each(answers, function(i, value){
+      $.each(answers, function(i){
         if (target==answers[i].studentName)
           $(".test-screenshot img").attr("src", answers[i].screenshot);
       });
   })
 })
 
-//ПОЧЕМУ ТАК НЕ РАБОТАЕТ??
+// ПОЧЕМУ ТАК НЕ РАБОТАЕТ??
 
 // $(document).ready(function() {
 //   $(".student").click(function(){
@@ -120,4 +113,3 @@ answers[1].studentName="Иван Иванов";
 answers[0].screenshot="https://www.codeproject.com/KB/architecture/autp5/vts.jpg";
 answers[1].screenshot="https://docs.microsoft.com/en-us/visualstudio/test/media/test-explorer-banktests-passed.png?view=vs-2019";
 
-console.log(answers[0].studentName);
