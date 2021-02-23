@@ -57,3 +57,14 @@ function closeChecking(){
   checkingWindow = document.getElementById("answer-checking-container");
   checkingWindow.style.display = "none";
 }
+
+//jQuery
+
+$( document ).ready(function() {
+  $('.col input').click(function(){
+    if($(this).val()=="назначить")
+    $(this).val("назначено")
+    else
+    $(this).val("назначить")
+  })
+});
