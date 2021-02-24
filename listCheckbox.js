@@ -1,10 +1,7 @@
 
 function changeCheckboxDisplay(checkboxes){
-  if ((checkboxes.style.display=="none")||(checkboxes.style.display=="")){//почему none эквивалентно ""??? И почему с одной "" onclick() срабатывает только один раз??
-    checkboxes.style.display = "block";
-  } else {
-    checkboxes.style.display = "none";
-  }
+  checkboxes.classList.toggle("hidden");
+  
 }
 
 function showCourses() {
@@ -20,20 +17,6 @@ function showGroups() {
 function showThemes() {
   var checkboxes = document.getElementById("themes");
   changeCheckboxDisplay(checkboxes);
-}
-
-
-//table cells customization
-
-let table = document.getElementsByClassName("table-row");
-table[0].style.borderTop = "2px solid #ffdaff";
-
-for (i=0; i<table.length; i++){
-  let tableCells = table[i].getElementsByClassName("col");
-  table[i].style.borderBottom = "2px solid #ffdaff";
-  for (j=0; j<tableCells.length; j++){
-    tableCells[j].style.alignSelf="center";
-  }
 }
 
 function showChecking(){
@@ -73,25 +56,6 @@ $(document).ready(function() {
   })
 })
 
-// ПОЧЕМУ ТАК НЕ РАБОТАЕТ??
-
-// $(document).ready(function() {
-//   $(".student").click(function(){
-//     $.each($(".student"), function(i, value){
-//       console.log(i,' ', value.text());
-//     });
-//   })
-// })
-
-//А ТАК РАБОТАЕТ??
-
-// $(document).ready(function() {
-//   $(".student").click(function(){
-//     $.each($(".student"), function(){
-//       console.log($(this).text());
-//     });
-//   })
-// })
 
 //classes
 class Answer{

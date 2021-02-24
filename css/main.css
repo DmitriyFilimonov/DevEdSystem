@@ -39,15 +39,30 @@
   }
   
   #courses, #groups, #themes {
-    display: none;
     border: 1px #dadada solid;
     background-color: #daffff;
+  }
+
+  #courses.hidden, #groups.hidden, #themes.hidden{
+    display: none;
   }
   
   #checkboxes label {
     display: block;
   }
   
+.table-row .col{
+  align-self:center;
+}
+
+.table-row{
+  border-bottom:2px solid #ffdaff;
+}
+
+.table-row:first-child{
+  border-top:2px solid #ffdaff;
+}
+
   #checkboxes label:hover {
     background-color: #1e90ff;
   }
