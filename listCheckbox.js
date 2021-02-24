@@ -3,7 +3,6 @@ function changeCheckboxDisplay(checkboxes){
   if ((checkboxes.style.display=="none")||(checkboxes.style.display=="")){//почему none эквивалентно ""??? И почему с одной "" onclick() срабатывает только один раз??
     checkboxes.style.display = "block";
   } else {
-    console.log("it works");
     checkboxes.style.display = "none";
   }
 }
@@ -25,26 +24,24 @@ function showThemes() {
 
 
 //table cells customization
-function customCells(){
-  let table = document.getElementsByClassName("table-row");
 
-  console.log(table);
+let table = document.getElementsByClassName("table-row");
+table[0].style.borderTop = "2px solid #ffdaff";
 
-  for (i=0; i<table.length; i++){
-    let tableCells = table[i].getElementsByClassName("col");
-    for (j=0; j<tableCells.length; j++){
-      tableCells[j].style.border = "1px solid #FF0000";
-    }
+for (i=0; i<table.length; i++){
+  let tableCells = table[i].getElementsByClassName("col");
+  table[i].style.borderBottom = "2px solid #ffdaff";
+  for (j=0; j<tableCells.length; j++){
+    tableCells[j].style.alignSelf="center";
   }
 }
+
 function showChecking(){
-  console.log("open")
   checkingWindow = document.getElementById("answer-checking-container");
   checkingWindow.style.display = "flex";
 }
 
 function closeChecking(){
-  console.log("event call")
   checkingWindow = document.getElementById("answer-checking-container");
   checkingWindow.style.display = "none";
 }
@@ -54,11 +51,13 @@ function closeChecking(){
 
 $(document).ready(function() {
   $(".appoint").click(function(){
-    if($(this).val()=="назначить"){
-      $(this).val("назначено");
+    if($(this).text()=="назначить"){
+      $(this).text("назначено");
+      $(this).removeClass("btn-danger");
     }
     else{
-      $(this).val("назначить");
+      $(this).text("назначить");
+      $(this).addClass("btn-danger");
     }
   })
 });
@@ -105,7 +104,7 @@ class Answer{
   }
 }
 
- let answers = [new Answer(), new Answer()];
+let answers = [new Answer(), new Answer()];
 
 answers[0].studentName="Семён Швец";
 answers[1].studentName="Иван Иванов";
