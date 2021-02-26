@@ -152,10 +152,12 @@
     display: none!important;
     background-color: #0000004f;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.541);
+    pointer-events: none;
   }
   .shown{
     display: flex!important;
     justify-content: center;
+    pointer-events: all;
   }
   .modal{
     height:100px;
