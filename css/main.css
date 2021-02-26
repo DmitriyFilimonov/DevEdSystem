@@ -103,6 +103,7 @@
     box-shadow: 0 0 10px black;
   }
 
+
   .closer{
     flex-grow:1;
   }
@@ -138,4 +139,29 @@
 
   img{
     height:400px;
+  }
+
+  
+  .modal-bg{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:2;
+    height:100%;
+    width:100%;
+    display: none!important;
+    background-color: #0000004f;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.541);
+  }
+  .shown{
+    display: flex!important;
+    justify-content: center;
+  }
+  .modal{
+    height:100px;
+    width:300px;
+    background-color: white;
+    position: relative;
+    display: block;
+    align-self: center;
   }

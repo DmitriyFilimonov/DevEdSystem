@@ -104,6 +104,9 @@
             <div class="col">
                 теги
             </div>
+            <div class="col">
+                <button>удалить</button>
+            </div>
         </div>
         <div class="row align-items-start table-row">
             <div class="col">
@@ -123,6 +126,9 @@
             </div>
             <div class="col">
                 теги
+            </div>
+            <div class="col">
+                <button>удалить</button>
             </div>
         </div>
         <div class="row align-items-start table-row">
@@ -144,9 +150,15 @@
             </div>
             <div class="col">
                 список тегов
+            </div><div class="col">
+                <button>удалить</button>
             </div>
         </div>
+        <div class="modal-bg">
+            <div class="modal">Are you sure?</div>
+        </div>
     </div>
+
 
     <div id="answer-checking-container">
         <div class="closer" onclick="closeChecking()"></div>
@@ -256,6 +268,7 @@
     </div>
 
     <script src="./listCheckbox.js">customCells();</script>
+    <script src="./modal.js"></script>
 
     <script type="module">
         import { Toast } from 'bootstrap.esm.min.js'
