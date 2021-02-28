@@ -1,15 +1,21 @@
-let a = (document.querySelectorAll('.table-row') as NodeListOf<HTMLElement>);
-let buttons = new Array<Element>();
-a.forEach(elem => buttons.push(elem.lastElementChild.firstElementChild));
+const buttons:NodeListOf<HTMLButtonElement> = (document.querySelectorAll('.delete-button'));
 
-buttons.forEach(button => (button as HTMLButtonElement).onclick = handler);
+const modalBg:HTMLElement = document.querySelector('.modal-bg');
 
-function handler(){
-    (document.querySelector('.modal-bg') as HTMLElement).classList.toggle('shown');
+function SnowModal(){
+    modalBg.classList.toggle('shown');
+}
+buttons.forEach(button =>(button as HTMLButtonElement).onclick = SnowModal);
+
+function CloseModal(){
+    modalBg.classList.contains('shown') ? modalBg.classList.remove('shown') : { };
 }
 
-let modalBg = document.querySelector('.modal-bg') as HTMLElement;
+modalBg.onclick = CloseModal;
 
-modalBg.onclick = () => {
-    modalBg.classList.contains('shown')?modalBg.classList.remove('shown'):{};
-};
+let divWithPropagation:HTMLElement = document.querySelector('.modal');
+function PropagationStopper(e:MouseEvent){
+    e.stopPropagation();
+}
+
+divWithPropagation.onclick = PropagationStopper;
