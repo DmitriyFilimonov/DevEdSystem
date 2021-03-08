@@ -19,3 +19,7 @@ function PropagationStopper(e:MouseEvent){
 }
 
 divWithPropagation.onclick = PropagationStopper;
+
+let closeModalButton:HTMLElement = document.querySelector('.close-modal-button');
+
+closeModalButton.onclick = CloseModal;

@@ -167,3 +167,21 @@
     display: block;
     align-self: center;
   }
+
+  .modal-head{
+    display: flex;
+    justify-content: space-between;
+  }
+  .close-modal-button{
+    height:14px;
+    width: 14px;
+    transform: rotate(45deg);
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 1px;
+    margin-left:11px;
+}
+
+.close-modal-button:hover{
+  cursor:pointer;
+}
