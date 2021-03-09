@@ -12,23 +12,25 @@
   }
   
   .overSelect {
-    position: absolute;
+    position: relative;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
   }
   
-  #courses, #groups, #themes {
+.listItems {
     border: 1px #dadada solid;
-    background-color: #daffff;
+    background-color: #daffff56;
+    display: flex;
+    flex-direction: column;
   }
 
-  #courses.hidden, #groups.hidden, #themes.hidden{
+  .listItems.hidden{
     display: none;
   }
   
-  #checkboxes label {
+  #checkboxes p {
     display: block;
   }
   

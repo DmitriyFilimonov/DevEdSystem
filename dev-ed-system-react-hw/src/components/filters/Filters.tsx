@@ -2,17 +2,20 @@ import { CourseFilter } from '../../classes/CourseFilter';
 import { FilterParameter } from '../../classes/FilterParameter';
 import DrawFilter from './filter/DrawFilter';
 import './Filters.css';
+import { HomeworkPageModel } from '../../interfaces/HomeworkPageModel';
+import { GroupFilter } from '../../classes/GroupFilter';
 
-const anyStringArray: string[] = ["курс 1", "курс 2", "курс 3"];
-const anyFilter: FilterParameter[] = [new CourseFilter(anyStringArray)];
+interface DrawFilterAttributes {
+    filterParameters: FilterParameter[];
+}
 
-function Filters() {
+function Filters(attributes: DrawFilterAttributes) {
     return (
         <div className="row align-items-start filters">{
-                anyFilter.map(filter => (
-                    <DrawFilter filterToRender={filter}></DrawFilter>
-                ))
-            }
+            attributes.filterParameters.map(filter => (
+                <DrawFilter filterToRender={filter}></DrawFilter>
+            ))
+        }
             <div className="col">
                 <input className="form-control" list="datalistOptions" id="exampleDataList" placeholder="поиск по тегам"></input>
                 <datalist id="datalistOptions">

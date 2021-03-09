@@ -1,26 +1,25 @@
 import { FilterParameter } from '../../../classes/FilterParameter';
 import './Filter.css';
 
-interface FilterToRender{
-    filterToRender:FilterParameter;
+interface FilterToRender {
+    filterToRender: FilterParameter;
 }
 
-function DrawFilter(filterToRender: FilterToRender) {
+function DrawFilter(attributes: FilterToRender) {
     return (
         <div className="col">
             <div className="multiselect">
                 <div className="selectBox">
                     <select>
-                        <option>{filterToRender.filterToRender.FilterType}</option>
+                        <option>{attributes.filterToRender.FilterType}</option>
                     </select>
                     <div className="overSelect"></div>
                 </div>
-                <div id="courses" className="listItems">{
-                        filterToRender.filterToRender.Content.map(item => (
-                           <p> <label>
-                                <input type="checkbox"/>{item}</label></p>
-                        ))
-                    }
+                <div className="listItems">{
+                    attributes.filterToRender.Content.map(item => (
+                        <label><input type="checkbox" />{item}</label>
+                    ))
+                }
                 </div>
             </div>
         </div>
